@@ -9,7 +9,7 @@ class DashboardController
         const houses = await House.find({user: user_id});
 
 
-        return res.json({ ok:"true"})
+        return res.json({ houses })
     }
 }
 

@@ -1,10 +1,10 @@
 import express from 'express';
 import routes from './routes';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import path from 'path';
 class App
 {
-
     constructor(){
         this.server = express();
 
@@ -19,6 +19,7 @@ class App
 
     middlewares(){
 
+        this.server.use(cors());
         this.server.use(
             '/files',
             express.static(path.resolve(__dirname, '..', 'uploads'))
